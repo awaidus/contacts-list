@@ -8,9 +8,11 @@ import { Contact } from '../contact.model';
 })
 export class ContactsListComponent implements OnInit {
   contacts: Contact[] = [
-    new Contact("Awaidus")
+    new Contact("Muhammad Awaidus", "0334-8566415"), 
+    new Contact("Ahmed", "55815-454554-1")
   ];
-  constructor() { }
+  constructor() {     
+  }
 
   ngOnInit() {
   }
