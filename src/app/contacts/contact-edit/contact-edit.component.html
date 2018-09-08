@@ -1,19 +1,32 @@
-<form>
-  <div class="form-group row">
-    <label for="name" class="col-sm-2 col-form-label">Name</label>
-    <div class="col-sm-10">
-      <input class="form-control" id="name" name="name">
-    </div>
+<div class="row">
+  <div class="col">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm" novalidate>
+      <div class="form-group row">
+        <label for="name" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+          <input class="form-control" id="name" name="name" 
+          [(ngModel)]="contact.name"          
+          [ngClass]="{'is-invalid': !name.valid && name.touched}"
+          #name="ngModel"
+          required>
+          <div *ngIf="!name.valid && name.touched"
+          [ngClass]="{'invalid-feedback': !name.valid && name.touched}">
+          Name is required</div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="phone" class="col-sm-2 col-form-label">Phone</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="phone" name="phone" 
+          [(ngModel)]="contact.phone">
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-10">
+          <button type="submit" class="btn btn-success"
+          [disabled]="!f.valid">Save</button>
+        </div>
+      </div>
+    </form>
   </div>
-  <div class="form-group row">
-    <label for="phone" class="col-sm-2 col-form-label">Phone</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="phone" name="phone">
-    </div>
-  </div>
-  <div class="form-group row">
-    <div class="col-sm-10">
-      <button type="submit" class="btn btn-success">Save</button>
-    </div>
-  </div>
-</form>
+</div>

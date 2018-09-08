@@ -1,3 +1,13 @@
 <div class="row">
-  <h4>Contact Details</h4>
+  <div class="col">
+    <h4>Contact Details</h4>
+    <h4>{{contact.name}}</h4>
+    <p>{{contact.phone}}</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <button class="btn btn-info" (click)="onEditContact()">Edit</button>
+  </div>
 </div>

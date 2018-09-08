@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
@@ -9,6 +10,9 @@ import { ContactsListComponent } from './contacts/contacts-list/contacts-list.co
 import { ContactDetailComponent } from './contacts/contact-detail/contact-detail.component';
 import { ContactItemComponent } from './contacts/contacts-list/contact-item/contact-item.component';
 import { ContactEditComponent } from './contacts/contact-edit/contact-edit.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ContactStartComponent } from './contacts/contact-start/contact-start.component';
+import { ContactService } from './contacts/contact.service';
 
 @NgModule({
   declarations: [
@@ -18,13 +22,16 @@ import { ContactEditComponent } from './contacts/contact-edit/contact-edit.compo
     ContactsListComponent,
     ContactDetailComponent,
     ContactItemComponent,
-    ContactEditComponent
+    ContactEditComponent,
+    PageNotFoundComponent,
+    ContactStartComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
